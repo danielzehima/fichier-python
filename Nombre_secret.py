@@ -7,7 +7,7 @@ nombre_secret=random.randint(10,100)
 tentatives=5
 essais=0
 print("\n"+"="*50)
-print("\nDEVINETTE:JEu DE RECHERCHE D'uN NOMBRE SECRET\n")
+print("\nDEVINETTE:JEU DE RECHERCHE D'UN NOMBRE SECRET\n")
 print("Les indices : Tapez Q por quitter \n")
 print("-"*50)
 while essais<tentatives:
@@ -27,10 +27,11 @@ while essais<tentatives:
             print(f"\nBravo, vous avez trové le nombre secret qui est : {nombre_secret}")
             print(f"Avec {essais} tentatives ")
             break
+        # si le nombre d'essais est egal a nomngre de tentatives
         if essais==tentatives:
             print(f"Dommage, vous avez atteint les {tentatives} essais ")
             print(f"Le nombre secret etait : {nombre_secret}")
-            break
+            break # sortir de la boucle
     except ValueError:
         #reinitialiser l'essai
         essais-=1
