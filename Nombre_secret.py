@@ -32,6 +32,7 @@ while essais<tentatives:
             print(f"Le nombre secret etait : {nombre_secret}")
             break
     except ValueError:
+        #reinitialiser l'essai
         essais-=1
         print("\nErreur! La valeur choisie est invalide ")
     print(f"Il vous reste {tentatives-essais} essais \n")
