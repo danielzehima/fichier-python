@@ -28,7 +28,25 @@ class Chat(Animal):
         return "Miaou Miaou!" 
     def se_presenter(self):
         return f"Je suis {self.nom}, je miaule: {self.faire_un_son()}"
-    
+
+class Vehicule:
+    def __init__(self, marque, modele,vitese=0):
+        self.marque = marque
+        self.modele = modele
+        self.vitesse= vitese
+        
+    def demarrer(self):
+        return f"Le véhicule démarre.."
+class Voiture(Vehicule):
+          
+    def demarrer(self):
+        return f"La voiture {self.marque} {self.modele} démarre avec un vrombissement! et roule à une vitesse de {self.vitesse} km/h."
+
+voitre1 = Voiture("Toyota", "Corolla",vitese=420)
+
+print(voitre1.demarrer())
+
+
 animal1=Chien("Rex", "Berger Allemand")
 animal2=Chat("Whiskers", "Gris")    
 print(animal1.se_presenter())

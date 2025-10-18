@@ -153,15 +153,17 @@ ma_bibliotheque = Bibliotheque("Médiathèque du Savoir")
 # 2. Agrégation d'Adhérents
 alice = Adherent("Durand", "Alice")
 bob = Adherent("Lefevre", "Bob")
+simplice=Adherent("Simplice","Mpondo")
 ma_bibliotheque.enregistrer_adherent(alice)
 ma_bibliotheque.enregistrer_adherent(bob)
+ma_bibliotheque.enregistrer_adherent(simplice)
 
 # 3. Agrégation de Livres (avec Composition d'Exemplaires)
 livre_poo = Livre("Maîtriser la POO", "P. Code", "P001", 2) # 2 exemplaires
-livre_python = Livre("Python pour Tous", "G. Van", "PYT1", 1) # 1 exemplaire
+livre_python = Livre("Python pour Tous", "G. Van", "PYT1", 3) # 1 exemplaire
 ma_bibliotheque.ajouter_livre(livre_poo)
 ma_bibliotheque.ajouter_livre(livre_python)
-
+ma_bibliotheque.ajouter_livre(livre_python)
 ma_bibliotheque.afficher_inventaire()
 
 
@@ -179,6 +181,8 @@ try:
     
     # Test 3 : Emprunt d'un livre inexistant (Lève LivreNonTrouveError)
     ma_bibliotheque.emprunter_livre("Le Code Perdu", alice.id_adherent)
+    
+    ma_bibliotheque.emprunter_livre("Python pour Tous", simplice.id_adherent)
     
 except LivreIndisponibleError as e:
     # Gère l'indisponibilité
